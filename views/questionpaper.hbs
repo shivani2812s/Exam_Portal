@@ -99,9 +99,7 @@
         {{#each Questions}}
         <div class="question" data-question-id="{{this._id}}">
             <p>Q.{{indexInc @index}}.{{this.question}}  {<span>{{this.marks}}</span> marks}</p>
-
             {{#if (eq this.questionType 'mcq')}}
-            
             {{#each this.options}}
             <div class="option">
                 <input type="radio" id="option_{{../_id}}_{{@../index}}_{{@index}}"

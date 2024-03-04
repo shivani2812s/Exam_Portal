@@ -6,6 +6,7 @@ const Exam=require('../models/questions');
 
 router.get('/allstudents',async(req,res)=>{
     const students=await User.find();
+   
     res.render('allstudents',{students});
 })
 
