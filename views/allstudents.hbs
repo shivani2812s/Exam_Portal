@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exam List</title>
+    <style>
+        body {
+            background-color: #6843ce62;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        button {
+            padding: 8px 16px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>All Students</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Firstname</th>
+                <th>Lastname</th>
+                <th>Gender</th>
+                <th>number</th>
+                <th>Enrollment no.</th>
+                <th>Class Name</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            {{#each Students}}
+            <tr>
+                <td>{{Firstname}}</td>
+                <td>{{Lastname}}</td>
+                <td>{{Gender}}</td>
+                <td>{{number}}</td>
+                <td>{{uniqueID}}</td>
+                <td>{{classname}}</td>
+                <td>
+                    <button onclick="viewProfile('{{_id}}')">View profile</button>
+                </td>
+            </tr>
+            {{/each}}
+        </tbody>
+    </table>
+
+    <script>
+        function viewProfile(userID) {
+            window.location.href = `/students/view/profile/${userID}`;
+        }
+    </script>
+</body>
+</html>
